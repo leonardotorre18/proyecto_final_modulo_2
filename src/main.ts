@@ -1,24 +1,15 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import axios from 'axios'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+// 658457f71d1f16b6a5c372b7
+// const id: string = window.location.pathname.slice(1)
+// fetch('http://localhost:3000/posts/' + id)
+//   .then(res => res.json())  
+//   .then(res => console.log(res))
+//   .catch(err => console.log(err))
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+axios.get('http://localhost:3000/posts/')
+  .then(res => console.log(res.data))
+
+
