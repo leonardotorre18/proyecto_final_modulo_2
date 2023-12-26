@@ -1,0 +1,30 @@
+.main {
+  padding: 60px 40pt;
+
+  &__jumbotron {
+    h2 {
+      font-size: 32pt;
+    }
+    &__img {
+      width: 100%;
+      height: 500px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+  }
+  &__content {
+    padding: 24pt 0;
+    &__body {
+      span {
+        margin-bottom: 8pt;
+        display: block;
+        opacity: .8;
+        font-weight: bold;
+      }
+    }
+  }
+}

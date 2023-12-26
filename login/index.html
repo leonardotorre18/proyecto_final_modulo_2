@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="header__nav">
+      <span class="header__nav__logo">
+        AlfaBlog
+      </span>
+
+      <div class="header__nav__container">
+        <ul class="header__nav__container__links">
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+          <li>Mis Publicaciones</li>
+        </ul>
+        <div class="header__nav__container__buttons">
+          <button>Iniciar Sesión</button>
+          <button>Registrarse</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main class="main">
+    <form action="http://localhost:3000/users/login" method="post">
+      <input type="email" name="email" id="email" required>
+      <input type="password" name="password" id="password" required>
+      <input type="submit" value="Iniciar Sesión">
+    </form>
+  </main>
+  <script type="module" src="/login/login.ts"></script>
+</body>
+</html>

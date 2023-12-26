@@ -1,5 +1,8 @@
-import './style.css'
+import CardComponent from './components/CardComponent'
+import './home.scss'
+import './global.scss'
 import axios from 'axios'
+import { IPost } from './types/IPost'
 
 // 658457f71d1f16b6a5c372b7
 // const id: string = window.location.pathname.slice(1)
@@ -9,7 +12,17 @@ import axios from 'axios'
 //   .catch(err => console.log(err))
 
 
-axios.get('http://localhost:3000/posts/')
-  .then(res => console.log(res.data))
+axios.get('http://localhost:3000/posts')
+  .then(res => {
+    const container = document.getElementById('grid-card')
+    
+    if (container !== null)
+      res.data.posts.map((post: IPost) => container.appendChild(CardComponent(post)))
+
+  })
+  .catch(() => {
+    const container = document.getElementById('grid-card')
+    container ? container.innerHTML  = 'Error en la petición' : null
+  })
 
 
