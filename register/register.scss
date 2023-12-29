@@ -1,0 +1,38 @@
+.main {
+  padding: 40pt 60px;
+  &__section {
+    h2 {
+      font-size: 32pt;
+      text-align: center;
+      margin-bottom: 32pt;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // Medida no responsiva
+      max-width: 800px;
+      // ---------------------
+      margin: 0 auto;
+      input[type="email"], input[type="password"], input[type="text"] {
+        border: solid 1px #1e1e1e;
+        width: 100%;
+        margin: 8pt 0;
+        padding: 6pt 14pt;
+        border-radius: 10px;
+      }
+      input[type="submit"] {
+        margin-top: 16pt;
+        background-color: #e78427;
+        color: #f2f2f2;
+        &:hover {
+          background-color: transparent;
+          border-color: #e78427;
+          color: #1e1e1e;
+          transition: all .15s ease-in;
+        }
+      }
+
+    }
+  }
+}

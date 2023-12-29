@@ -14,7 +14,7 @@
       max-width: 800px;
       // ---------------------
       margin: 0 auto;
-      input[type="email"], input[type="password"] {
+      input[type="email"], input[type="password"], input[type="text"], textarea, input[type="file"] {
         border: solid 1px #1e1e1e;
         width: 100%;
         margin: 8pt 0;

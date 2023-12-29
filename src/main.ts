@@ -3,6 +3,7 @@ import './home.scss'
 import './global.scss'
 import axios from 'axios'
 import { IPost } from './types/IPost'
+import SessionButtonsComponent from './components/SessionButtonsComponent'
 
 // 658457f71d1f16b6a5c372b7
 // const id: string = window.location.pathname.slice(1)
@@ -10,6 +11,10 @@ import { IPost } from './types/IPost'
 //   .then(res => res.json())  
 //   .then(res => console.log(res))
 //   .catch(err => console.log(err))
+
+const sessionButtons = document.querySelector('#session-buttons') 
+if (sessionButtons !== null) 
+  sessionButtons.appendChild(SessionButtonsComponent())
 
 
 axios.get('http://localhost:3000/posts')

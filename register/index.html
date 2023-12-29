@@ -20,15 +20,15 @@
       <div class="header__nav__container">
         <ul class="header__nav__container__links">
           <li>
-            <a href="/">
-              Home
-            </a>
+            <a href="/">Home</a>
           </li>
-          <li>Mis Publicaciones</li>
+          <li>
+            <a href="/newPost/">Crear Publicación</a>
+          </li>
         </ul>
-        <div class="header__nav__container__buttons">
-          <button>Iniciar Sesión</button>
-          <button>Registrarse</button>
+        <div class="header__nav__container__buttons" id="session-buttons">
+          <a href="/login/"><button class="">Iniciar Sesión</button></a>
+          <a href="/register/"><button class="header__nav__container__buttons__register">Registrarse</button></a>
         </div>
       </div>
     </nav>
@@ -36,13 +36,16 @@
 
 
   <main class="main">
-    <form action="http://localhost:3000/users/register" method="post">
-      <input type="text" name="name" id="name" required>
-      <input type="email" name="email" id="email" required>
-      <input type="password" name="password" id="password" required>
-      <input type="submit" value="Registrarse">
-    </form>
+    <section class="main__section">
+      <h2>Crea una cuenta para comenzar a publicar</h2>
+      <form action="http://localhost:3000/users/login" method="post" class="main__section__form" id="login-form">
+        <input type="text" name="name" id="name" required placeholder="Ingresa tu Nombre Completo">
+        <input type="email" name="email" id="email" required placeholder="Ingresa tu Email">
+        <input type="password" name="password" id="password" required placeholder="Ingresa tu contraseña">
+        <input type="submit" value="Iniciar Sesión">
+      </form>
+    </section>
   </main>
-  <script type="module" src="/login/login.ts"></script>
+  <script type="module" src="/register/register.ts"></script>
 </body>
 </html>

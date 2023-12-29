@@ -1,6 +1,12 @@
 import axios from 'axios'
 import '../src/global.scss'
 import './post.scss'
+import SessionButtonsComponent from '../src/components/SessionButtonsComponent'
+
+const sessionButtons = document.querySelector('#session-buttons') 
+if (sessionButtons !== null) 
+  sessionButtons.appendChild(SessionButtonsComponent())
+
 
 const id = window.location.search.split('=')[1]
 

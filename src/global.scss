@@ -12,15 +12,13 @@
   text-decoration: none;
 }
 
-
-button {
+button, input[type="submit"] {
   padding: 6pt 14pt;
   border-radius: 10px;
   border: solid 2px transparent;
   font-weight: bold;
   cursor: pointer;
 }
-
 
 .header {
   position: sticky;
@@ -49,12 +47,15 @@ button {
         gap: 16pt;
         li {
           cursor: pointer;
+          width: max-content;
         }
       }
       &__buttons {
         gap: 16pt;
         display: flex;
-
+        button {
+          width: max-content;
+        }
         &__register {
           background-color: #e78427;
           color: #f2f2f2;
@@ -69,6 +70,3 @@ button {
     }
   }
 }
-
-
-

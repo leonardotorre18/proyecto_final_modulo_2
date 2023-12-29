@@ -3,12 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Document</title>
 </head>
 <body>
   <header class="header">
@@ -34,24 +29,17 @@
     </nav>
   </header>
 
-
   <main class="main">
-    <section class="main__jumbotron">
-      <h2 id="post-title"></h2>
-      <div class="main__jumbotron__img">
-        <img src="" id="post-img">
-      </div>
-    </section>
-    <section class="main__content">
-      <div class="main__content__body">
-        <span id="post-author"></span>
-        <p id="post-body"></p>
-      </div>
-      <!-- <aside>
-
-      </aside> -->
+    <section class="main__section">
+      <h2>Crea una publicación</h2>
+      <form action="http://localhost:3000/posts/" method="post" class="main__section__form" id="post-form" enctype="multipart/form-data">
+        <input type="text" name="title" id="title" required placeholder="Título de la publicación">
+        <textarea name="body" id="body" cols="30" rows="10"></textarea>
+        <input type="file" name="image" id="image">
+        <input type="submit" value="Publicar">
+      </form>
     </section>
   </main>
-  <script type="module" src="/post/post.ts"></script>
+  <script type="module" src="/newPost/newPost.ts"></script>
 </body>
 </html>
