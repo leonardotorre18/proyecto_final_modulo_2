@@ -3,18 +3,29 @@ import '../src/global.scss'
 import './post.scss'
 import SessionButtonsComponent from '../src/components/SessionButtonsComponent'
 
-const sessionButtons = document.querySelector('#session-buttons') 
-if (sessionButtons !== null) 
-  sessionButtons.appendChild(SessionButtonsComponent())
-
+const sessionButtons = document.querySelector('#session-buttons')
+if (sessionButtons !== null) sessionButtons.appendChild(SessionButtonsComponent())
 
 const id = window.location.search.split('=')[1]
 
 axios.get('http://localhost:3000/posts/' + id)
   .then(res => {
-    const { post } = res.data
+    const { post }: {
+      post: {
+        title: string
+        body: string
+        user: {
+          name: string
+          email: string
+        }
+        img: {
+          url: string
+          id: string
+        }
+      }
+    } = res.data
     console.log(post)
-    
+
     const title = document.querySelector('#post-title')
     const image = document.querySelector('#post-img')
     const body = document.querySelector('#post-body')
@@ -32,3 +43,4 @@ axios.get('http://localhost:3000/posts/' + id)
       author.innerHTML = post.user.name
     }
   })
+  .catch(res => res)
